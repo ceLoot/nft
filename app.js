@@ -4,7 +4,10 @@ const chainId = 44787;//test net
 const price = 1;
 
 const contractAddress = "0x886cE5B1f30043911aB6d836862Fdd3Ed1CED3aA";//test net
-const etherscanUrl = "https://explorer.celo.org/tx/";
+const etherscanUrl = "https://exhttps://alfajores-blockscout.celo-testnet.org/txplorer.celo.org/tx";//test net
+
+//const contractAddress = "";//main net
+//const etherscanUrl = "https://explorer.celo.org/tx";//main net
 let provider = null;
 
 const abi = [
