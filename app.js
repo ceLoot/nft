@@ -1,8 +1,9 @@
 const env = "mainnet";
-const chainId = 42220;//42161;//A4B1
+const chainId = 44787;//test net
+//const chainId = 42220;//main net
 const price = 1;
 
-const contractAddress = "0x1899434830318edb494f61a365be7e222183ab93";
+const contractAddress = "0x886cE5B1f30043911aB6d836862Fdd3Ed1CED3aA";//test net
 const etherscanUrl = "https://explorer.celo.org/tx/";
 let provider = null;
 
