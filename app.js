@@ -3,7 +3,7 @@ const chainId = 42220;//42161;//A4B1
 const price = 1;
 
 const contractAddress = "0x1899434830318edb494f61a365be7e222183ab93";
-const etherscanUrl = "https://arbiscan.io/tx/";
+const etherscanUrl = "https://explorer.celo.org/tx/";
 let provider = null;
 
 const abi = [
