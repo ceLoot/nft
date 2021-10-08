@@ -643,7 +643,7 @@ window.onload = () => {
   };
 
   const failedConnectWallet = () => {
-    document.getElementById("button").innerHTML = "Error Network";
+    document.getElementById("button").innerHTML = "Error Network, switch to Celo";
   };
 
   const switchNetwork = async () => {
