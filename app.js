@@ -1,13 +1,13 @@
 const env = "mainnet";
-const chainId = 44787;//test net
-//const chainId = 42220;//main net
+//const chainId = 44787;//test net
+const chainId = 42220;//main net
 const price = 1;
 
-const contractAddress = "0x886cE5B1f30043911aB6d836862Fdd3Ed1CED3aA";//test net
-const etherscanUrl = "https://alfajores-blockscout.celo-testnet.org/tx";//test net
+//const contractAddress = "0x886cE5B1f30043911aB6d836862Fdd3Ed1CED3aA";//test net
+//const etherscanUrl = "https://alfajores-blockscout.celo-testnet.org/tx";//test net
 
-//const contractAddress = "";//main net
-//const etherscanUrl = "https://explorer.celo.org/tx";//main net
+const contractAddress = "0x6411549E7201e5587a19b413301BcaA9432aE3c0";//main net
+const etherscanUrl = "https://explorer.celo.org/tx";//main net
 let provider = null;
 
 const abi = [
@@ -653,15 +653,15 @@ window.onload = () => {
           method: "wallet_addEthereumChain",
           params: [
             {
-              chainId: "0x61",
-              chainName: "BSC Testnet",
+              chainId: "0xaef3",
+              chainName: "Celo Alfajores Testnet",
               nativeCurrency: {
-                name: "BSC",
-                symbol: "BNB",
+                name: "CELO",
+                symbol: "CELO",
                 decimals: 18,
               },
-              rpcUrls: ["https://data-seed-prebsc-1-s2.binance.org:8545"],
-              blockExplorerUrls: ["https://testnet-explorer.binance.org/"],
+              rpcUrls: ["https://alfajores-forno.celo-testnet.org"],
+              blockExplorerUrls: ["https://alfajores-blockscout.celo-testnet.org/tx"],
             },
           ],
         })
