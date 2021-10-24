@@ -814,8 +814,8 @@ window.onload = () => {
         let html =`<h2>You Minted:</h2>
         <div class="row" style="width:1200px" >`;
         for(let image of images){
-          html +=`<div class="column" style="float:left;width:350px;margin-right:10px;">
-          <img src="${image}" width="300" height="300">
+          html +=`<div class="column" style="float:left;width:350px;margin-right:20px;">
+          <img src="${image}" width="350" height="350">
           </div>`;
         }
         html +='</div>';
