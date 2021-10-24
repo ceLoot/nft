@@ -791,8 +791,8 @@ window.onload = () => {
         const ImageContract = new ethers.Contract(contractAddress, abi, signer);
         const tokenBalance =  await ImageContract.balanceOf(account);//account token Balance
         $.toast({
-          heading: "Checking...",
-          text: "Start to Checking your NFT！",
+          heading: "Loading...",
+          text: "Start to load your NFT！",
           position: "top-center",
           showHideTransition: "fade",
           hideAfter: 10000,
@@ -824,12 +824,12 @@ window.onload = () => {
         $.toast().reset("all");
         $.toast({
           heading: "Success",
-          text: "Minted Success!",
+          text: "Please check your NFTs!",
           showHideTransition: "slide",
           position: "top-center",
           icon: "success",
         });
-        document.getElementById("mint").innerHTML = "Mint";
+        document.getElementById("show").innerHTML = "Show my NFT";
         window.open(`${etherscanUrl}/${result.transactionHash}`);
       } catch (e) {}
     }
