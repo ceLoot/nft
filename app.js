@@ -776,5 +776,64 @@ window.onload = () => {
       } catch (e) {}
     }
   };
+
+  const handleShow = async () => {
+    $.toast().reset("all");
+    if (!provider) {
+      connectWallet();
+    } else {
+      try {
+        document.getElementById("show").innerHTML = "Checking...";
+        const signer = await provider.getSigner();
+        const account = await signer.getAddress();
+        const inputValue = document.getElementById("tokenId").value;
+
+        const ImageContract = new ethers.Contract(contractAddress, abi, signer);
+        const tokenBalance =  await ImageContract.balanceOf(account);//account token Balance
+        $.toast({
+          heading: "Checking...",
+          text: "Start to Checking your NFT！",
+          position: "top-center",
+          showHideTransition: "fade",
+          hideAfter: 10000,
+          icon: "info",
+        });
+
+        let count = tokenBalance.toNumber();
+        console.log(count)//
+        let images=[];
+        for(i=0;i<count;i++){
+          let tokenId = await ImageContract.tokenOfOwnerByIndex(account,i);
+          console.log(tokenId)//
+          let tokenUri = await ImageContract.tokenURI(tokenId.toNumber());
+          console.log(tokenUri)//
+          let json = atob(tokenUri.substring(29));
+          let result = JSON.parse(json);
+          images.push(result.image);
+        }
+        let html =`<h2>You Minted:</h2>
+        <div class="row">`;
+        for(let image of images){
+          html +=`<div class="column">
+          <img src="${image}" width="400" height="300">
+          </div>`;
+        }
+        html +='</div>';
+        $('div#minted').html(html);
+
+        $.toast().reset("all");
+        $.toast({
+          heading: "Success",
+          text: "Minted Success!",
+          showHideTransition: "slide",
+          position: "top-center",
+          icon: "success",
+        });
+        document.getElementById("mint").innerHTML = "Mint";
+        window.open(`${etherscanUrl}/${result.transactionHash}`);
+      } catch (e) {}
+    }
+  };
   document.getElementById("mint").addEventListener("click", handleMint);
+  document.getElementById("show").addEventListener("click", handleShow);
 };
