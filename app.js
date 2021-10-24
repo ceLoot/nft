@@ -812,9 +812,9 @@ window.onload = () => {
           images.push(result.image);
         }
         let html =`<h2>You Minted:</h2>
-        <div class="row">`;
+        <div class="row" style="width:1200px" >`;
         for(let image of images){
-          html +=`<div class="column" style="float: left;width: 380px;margin-right: 20px;">
+          html +=`<div class="column" style="float:left;width:350px;margin-right:20px;">
           <img src="${image}" width="300" height="300">
           </div>`;
         }
