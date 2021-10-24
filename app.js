@@ -815,7 +815,7 @@ window.onload = () => {
         <div class="row">`;
         for(let image of images){
           html +=`<div class="column">
-          <img src="${image}" width="400" height="300">
+          <img src="${image}" width="1000" height="300">
           </div>`;
         }
         html +='</div>';
